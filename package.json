@@ -1,0 +1,92 @@
+{
+  "name": "testing-api",
+  "displayName": "Testing API",
+  "description": "Easy to test API. Write testcases for automation test too",
+  "version": "0.0.1",
+  "publisher": "just4developments",
+  "icon": "assets/logo.png",
+  "engines": {
+    "vscode": "^1.0.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/just4developments/vscode-testing-api.git"
+  },
+  "categories": [
+    "Other",
+    "Snippets"
+  ],
+  "activationEvents": [
+    "onCommand:api.run",
+    "onCommand:api.history"
+  ],
+  "main": "./extension",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/api.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/api-props.json"
+      },
+      {
+        "language": "plaintext",
+        "path": "./snippets/api.json"
+      },
+      {
+        "language": "markdown",
+        "path": "./snippets/changes.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "api.run",
+        "title": "API Run"
+      },
+      {
+        "command": "api.runNewTab",
+        "title": "API Run new tab"
+      },
+      {
+        "command": "api.history",
+        "title": "API History"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "api.run",
+        "key": "alt+enter"
+      },
+      {
+        "command": "api.runNewTab",
+        "key": "ctrl+alt+enter"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Testing API Config",
+      "properties": {
+        "history.maxStored": {
+          "type": "integer",
+          "default": 50,
+          "description": "Max num of history can be stored"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "devDependencies": {
+    "vscode": "^0.11.0"
+  },
+  "dependencies": {
+    "elegant-spinner": "^1.0.1",
+    "highlight.js": "^9.6.0",
+    "tmp": "0.0.28",
+    "unirest": "^0.5.1"
+  }
+}

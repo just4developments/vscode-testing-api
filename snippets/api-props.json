@@ -1,0 +1,133 @@
+{
+  "api-doc": {
+    "prefix": "api.doc",
+    "body": [
+      "doc: {",
+        "\ttitle: '$1',",
+        "\trequestHeader: '${2:req:header}',",
+        "\tresponseHeader: '${3:res:header}',",
+        "\tresponseBody: $4,",
+        "\trequestBody: $5,",
+        "\tgroupName: '%6',",
+        "\torder: $7",
+      "}"
+    ],
+    "description": "Declare document for API"
+  },
+  "api-disabled": {
+    "prefix": "api.disabled",
+    "body": [
+      "disabled: true"
+    ],
+    "description": "Do not run this api"
+  },
+  "api-var": {
+    "prefix": "api.var",
+    "body": [
+      "var: '$1'"
+    ],
+    "description": "Declare variable which stored response header and body"
+  },
+  "api-delay": {
+    "prefix": "api.delay",
+    "body": [
+      "nextCallAfter: ${1:miliseconds}"
+    ],
+    "description": "Pause for a while(ms) before begin the next call"
+  },  
+  "api-completed": {
+    "prefix": "api.completed",
+    "body": [
+      "end: (cb) => {",
+        "\t${1:Throw exception when you want api failed}",
+      "}"
+    ],
+    "description": "Listener when api is completed"
+  },
+  "api-des": {
+    "prefix": "api.des",
+    "body": [
+      "des: '$1'"
+    ],
+    "description": "API description in testing mode"
+  },
+  "api-key": {
+    "prefix": "api.key",
+    "body": [
+      "key: '$1'"
+    ],
+    "description": "Declare api template which will be reused for others"
+  },
+  "api-extends": {
+    "prefix": "api.extends",
+    "body": [
+      "extends: '$1'"
+    ],
+    "description": "Extends api template by key to reused"
+  },
+  "api-checker": {
+    "prefix": "api.checker",
+    "body": [
+      "checker: [",
+        "\t$1",
+      "]"
+    ],
+    "description": "Declare checker"
+  },
+  "api-checker-status": {
+    "prefix": "api.checker.status",
+    "body": [
+      "{status: [$1]}"
+    ],
+    "description": "Check response status must in array which your expect"
+  },
+  "api-checker-size": {
+    "prefix": "api.checker.size",
+    "body": [
+      "{size: $1}"
+    ],
+    "description": "Check response data length must equals your expectation "
+  },
+  "api-checker-equals": {
+    "prefix": "api.checker.equals",
+    "body": [
+      "{equals: $1}"
+    ],
+    "description": "Check response data must EQUALS your expectation"
+  },
+  "api-checker-not-equals": {
+    "prefix": "api.checker.not-equals",
+    "body": [
+      "{'!equals': $1}"
+    ],
+    "description": "Check response data must NOT EQUALS your expectation"
+  },
+  "api-checker-contains": {
+    "prefix": "api.checker.contains",
+    "body": [
+      "{contains: $1}"
+    ],
+    "description": "Check response data must CONTAINS your expectation"
+  },
+  "api-checker-not-contains": {
+    "prefix": "api.checker.not-contains",
+    "body": [
+      "{'!contains': $1}"
+    ],
+    "description": "Check response data must NOT CONTAINS your expectation"
+  },
+  "api-checker-in": {
+    "prefix": "api.checker.in",
+    "body": [
+      "{in: $1}"
+    ],
+    "description": "Check response data must IN your expectation"
+  },
+  "api-checker-not-in": {
+    "prefix": "api.checker.not-in",
+    "body": [
+      "{'!in': $1}"
+    ],
+    "description": "Check response data must NOT IN your expectation"
+  }
+}

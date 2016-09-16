@@ -1,0 +1,1 @@
+vsce package & code testing-api-0.0.1.vsix

@@ -1,0 +1,11 @@
+{
+  "version": {
+    "prefix": "version",
+    "body": [
+      "#version: $1",
+      "#date: $2",
+      "$3"
+    ],
+    "description": "Version code and created date"
+  }
+}

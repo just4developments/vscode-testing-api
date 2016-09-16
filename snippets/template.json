@@ -1,0 +1,110 @@
+{
+  "api-head": {
+    "prefix": "api.head",
+    "body": [
+      "{",
+      "\tkey: '$1',",
+      "\tmethod: 'HEAD',",
+      "\turl: '$2'",
+      "}"
+    ],
+    "description": "Ping data (api-testing-tool)"
+  },
+  "api-get": {
+    "prefix": "api.get",
+    "body": [
+      "{",
+      "\tkey: '$1',",
+      "\tmethod: 'GET',",
+      "\turl: '$2'",
+      "}"
+    ],
+    "description": "GET data (api-testing-tool)"
+  },
+  "api-delete": {
+    "prefix": "api.delete",
+    "body": [
+      "{",
+      "\tkey: '$1',",
+      "\tmethod: 'DELETE',",
+      "\turl: '$2'",
+      "}"
+    ],
+    "description": "Delete data (api-testing-tool)"
+  },
+  "api-post-json": {
+    "prefix": "api.post.json",
+    "body": [
+      "{",
+      "\tkey: '$1',",
+        "\tmethod: 'POST',",
+        "\turl: '$2',",
+        "\ttransformRequest: 'json',",
+        "\trequestHeader: {",
+          "\t\t'content-type': 'application/json'",
+        "\t}",
+      "}"
+    ],
+    "description": "Add JSON data (api-testing-tool)"
+  },
+  "api-post-form": {
+    "prefix": "api.post.form",
+    "body": [
+      "{",
+        "\tkey: '$1',",
+        "\tmethod: 'POST',",
+        "\turl: '$2',",
+        "\ttransformRequest: 'form',",
+        "\trequestHeader: {",
+          "\t\t'content-type': 'application/x-www-form-urlencoded'",
+        "\t},",
+      "}"
+    ],
+    "description": "Add form data key-value (api-testing-tool)"
+  },
+  "api-put-json": {
+    "prefix": "api.put.json",
+    "body": [
+      "{",
+        "\tkey: '$1',",
+        "\tmethod: 'PUT',",
+        "\turl: '$2',",
+        "\ttransformRequest: 'json',",
+        "\trequestHeader: {",
+          "\t\t'content-type': 'application/json'",
+        "\t},",
+      "}"
+    ],
+    "description": "Update JSON data (api-testing-tool)"
+  },
+  "api-put-form": {
+    "prefix": "api.put.form",
+    "body": [
+      "{",
+        "\tkey: '$1',",
+        "\tmethod: 'PUT',",
+        "\turl: '$2',",
+        "\ttransformRequest: 'form',",
+        "\trequestHeader: {",
+          "\t\t'content-type': 'application/x-www-form-urlencoded'",
+        "\t},",
+      "}"
+    ],
+    "description": "Update form data key-value (api-testing-tool)"
+  },
+  "api-post-file": {
+    "prefix": "api.post.file",
+    "body": [
+      "{",
+        "\tkey: '$1',",
+        "\tmethod: 'POST',",
+        "\turl: '$2',",
+        "\ttransformRequest: 'form',",
+        "\trequestHeader: {",
+          "\t\t'content-type': 'multipart/form-data'",
+        "\t},",
+      "}"
+    ],
+    "description": "Upload file. File can be string array or string which is absolute path to file (api-testing-tool)"
+  }
+}

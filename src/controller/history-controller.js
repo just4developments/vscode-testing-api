@@ -13,10 +13,10 @@ module.exports = class HistoryController {
     
   }
 
-  register(cmd){
+  register(){
     var self = this;
     HistoryService.load();
-    this.disposable = vscode.commands.registerCommand(cmd, function() {
+    return vscode.commands.registerCommand('api.history', function() {
       vscode.window.showQuickPick(HistoryService.list.map(e=>{ 
         e.label = `${e.label0} >${HistoryService.getCreatedTime(new Date(e.date))}`; 
         return e;

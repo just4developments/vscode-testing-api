@@ -5,44 +5,56 @@ var httpRequest = require('../service/http-request');
 var HistoryService = require('../service/history-service');
 
 module.exports = class ApiController {
-  constructor(isNewTab){
-    this.isNewTab = isNewTab;
-    this.httpPreview = new HttpPreview(isNewTab);       
+  constructor(){
+    this.httpPreview = new HttpPreview(); 
+    this.registration = this.httpPreview.register('api-response-preview');      
   }
 
   dispose() {
     
   }
 
-  register(cmd){
+  register(){
     var self = this;
-    this.registration = this.httpPreview.register('api-response-preview', this.isNewTab);
-    this.disposable = vscode.commands.registerCommand(cmd, function() {
-      var editor = vscode.window.activeTextEditor;
-      if (!editor) return;
-      self.httpPreview.update();
-      StatusBar.items.duration.pending();
-      var api;
-      try{
-        api = self.getApi(editor);
-      }catch(e){
-        vscode.window.showErrorMessage(e);
-        StatusBar.items.duration.done(-1);
-        return;
-      }
-      HistoryService.add({
-        label0: `${api.method.toUpperCase()} ${api.url}`,
-        description: api.des || '',
-        raw: api.raw,
-        date: new Date().getTime()
-      });
-      var now = new Date().getTime();      
+    return vscode.commands.registerCommand('api.run', function() {
+      self.run(false);
+    });
+  }
+  registerNewTab(){
+    var self = this;
+    return this.disposableNewTab = vscode.commands.registerCommand('api.runNewTab', function() {
+      self.run(true);
+    });
+  }
+
+  run(isNewTab){
+    var self = this;    
+    var editor = vscode.window.activeTextEditor;
+    if (!editor) return;
+    StatusBar.items.duration.pending();
+    self.httpPreview.update(undefined, isNewTab);
+    var api;
+    try{
+      api = this.getApi(editor);
+    }catch(e){
+      vscode.window.showErrorMessage(e);
+      StatusBar.items.duration.done(-1);
+      return;
+    }
+    HistoryService.add({
+      label0: `${api.method.toUpperCase()} ${api.url}`,
+      description: api.des || '',
+      raw: api.raw,
+      date: new Date().getTime()
+    });
+    setTimeout(() => {
+      var now = new Date().getTime();
       httpRequest.send(api, (res) => {
         res.duration = new Date().getTime() - now;
         StatusBar.items.duration.done(res.duration);
-        self.httpPreview.update(res);
+        self.httpPreview.update(res, isNewTab);
       });
-    });
+    }, 100);
   }
 
   getApi(editor){

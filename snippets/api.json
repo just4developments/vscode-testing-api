@@ -4,7 +4,7 @@
     "body": [
       "{",
       "\tmethod: 'HEAD',",
-      "\turl: '$1'",
+      "\turl: 'http://$1'",
       "}"
     ],
     "description": "Ping data (api-testing-tool)"
@@ -14,7 +14,7 @@
     "body": [
       "{",
       "\tmethod: 'GET',",
-      "\turl: '$1'",
+      "\turl: 'http://$1'",
       "}"
     ],
     "description": "GET data (api-testing-tool)"
@@ -24,7 +24,7 @@
     "body": [
       "{",
       "\tmethod: 'DELETE',",
-      "\turl: '$1'",
+      "\turl: 'http://$1'",
       "}"
     ],
     "description": "Delete data (api-testing-tool)"
@@ -34,7 +34,7 @@
     "body": [
       "{",
         "\tmethod: 'POST',",
-        "\turl: '$1',",
+        "\turl: 'http://$1',",
         "\trequestHeader: {",
           "\t\t'content-type': 'application/json'",
         "\t},",
@@ -48,7 +48,7 @@
     "body": [
       "{",
         "\tmethod: 'POST',",
-        "\turl: '$1',",
+        "\turl: 'http://$1',",
         "\trequestHeader: {",
           "\t\t'content-type': 'application/x-www-form-urlencoded'",
         "\t},",
@@ -64,7 +64,7 @@
     "body": [
       "{",
         "\tmethod: 'PUT',",
-        "\turl: '$1',",
+        "\turl: 'http://$1',",
         "\trequestHeader: {",
           "\t\t'content-type': 'application/json'",
         "\t},",
@@ -78,7 +78,7 @@
     "body": [
       "{",
         "\tmethod: 'PUT',",
-        "\turl: '$1',",
+        "\turl: 'http://$1',",
         "\trequestHeader: {",
           "\t\t'content-type': 'application/x-www-form-urlencoded'",
         "\t},",
@@ -94,7 +94,7 @@
     "body": [
       "{",
         "\tmethod: 'POST',",
-        "\turl: '$1',",
+        "\turl: 'http://$1',",
         "\trequestHeader: {",
           "\t\t'content-type': 'multipart/form-data'",
         "\t},",

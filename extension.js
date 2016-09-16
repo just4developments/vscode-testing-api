@@ -3,22 +3,15 @@ var ApiController = require('./src/controller/api-controller');
 var HistoryController = require('./src/controller/history-controller');
 var StatusBar = require('./src/view/status-bar');
 
-var apiRun1Tab = new ApiController(false);
-var apiRunMTab = new ApiController(true);
+var apiController = new ApiController(false);
 var apiHistory = new HistoryController();
 
 exports.activate = (context) => {
   console.log('Congratulations, "Quick-test-api" is now active!');
   StatusBar.setup();
-  // context.subscriptions.push(apiRun1Tab);
-  // context.subscriptions.push(apiRunMTab);
-  apiRun1Tab.register('api.run');
-  apiRunMTab.register('api.runNewTab');
-  apiHistory.register('api.history');
-
-  context.subscriptions.push(apiRun1Tab.disposable, apiRun1Tab.registration);  
-  context.subscriptions.push(apiRunMTab.disposable, apiRunMTab.registration);
-  context.subscriptions.push(apiHistory.disposable);
+  context.subscriptions.push(apiController.register());  
+  context.subscriptions.push(apiController.registerNewTab());
+  context.subscriptions.push(apiHistory.register());
 };
 
 exports.deactivate = () => {

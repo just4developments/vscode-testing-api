@@ -1,8 +1,8 @@
 {
   "name": "testing-api",
-  "displayName": "Testing API",
+  "displayName": "API Testing",
   "description": "Easy to test API. Write testcases for automation test too",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "just4developments",
   "icon": "assets/logo.png",
   "engines": {
@@ -89,6 +89,7 @@
     "vscode": "^0.11.0"
   },
   "dependencies": {
+    "api-testing-tool": "^1.0.2",
     "elegant-spinner": "^1.0.1",
     "highlight.js": "^9.6.0",
     "tmp": "0.0.28",

@@ -1,7 +1,7 @@
 var unirest = require('unirest');
 
 exports = module.exports = {
-  handleForm: (requestBody) => {
+  handleForm: (req, requestBody) => {
     var files;
     for(var k in requestBody){			
       if(k.indexOf('file:') === 0){
@@ -25,10 +25,11 @@ exports = module.exports = {
         req = req.field(k, requestBody[k]);
       }		
     }
+    return req;
   },
   send: (config, fcDone) => {
     var requestBody;
-    if(config.requestBody !== undefined) config.requestBody = Object.assign({}, config.requestBody);
+    if(config.requestBody !== undefined) requestBody = Object.assign({}, config.requestBody);
     var transformRequest = (config.requestHeader && config.requestHeader['content-type']) ? config.requestHeader['content-type'].toLowerCase() : undefined;
     if('multipart/form-data' === transformRequest || 'application/x-www-form-urlencoded' === transformRequest) transformRequest = 'form';
     else if('application/json' === transformRequest) transformRequest = 'json';
@@ -36,14 +37,14 @@ exports = module.exports = {
     if ('post' === config.method) {
       req = unirest.post(config.url);      
       if(requestBody !== undefined){
-        if('form' === transformRequest) exports.handleForm(requestBody);
+        if('form' === transformRequest) req = exports.handleForm(req, requestBody);
         else if('json' === transformRequest) req = req.send(JSON.stringify(requestBody));
         else req = req.send(requestBody);
       }  
     } else if ('put' === config.method) {
       req = unirest.put(config.url);
       if(requestBody !== undefined){
-        if('form' === transformRequest) exports.handleForm(requestBody);
+        if('form' === transformRequest) req = exports.handleForm(req, requestBody);
         else if('json' === transformRequest) req = req.send(JSON.stringify(requestBody));
         else req = req.send(requestBody);
       }

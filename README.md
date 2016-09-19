@@ -15,7 +15,7 @@ Testing API is a extension for visual code which is easy to use and trace histor
 2. Same for POST, PUT, HEAD, DELETE method
 4. ...
 
-> Tip: Please type `api.` to get snippets.
+> Tip: Please type `api.` to get snippets. Add `des` attribute to describe api in history
 
 ### Quick command
 
@@ -34,6 +34,10 @@ This extension contributes the following settings:
 * `history.maxStored`: Max num of history can be stored.(Default is 50)
 
 ## Release Notes
+
+### 1.0.2
+
+* Fix upload file error
 
 ### 1.0.1
 

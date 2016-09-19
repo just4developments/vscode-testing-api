@@ -51,6 +51,7 @@ module.exports = class ApiController {
       var now = new Date().getTime();
       httpRequest.send(api, (res) => {
         res.duration = new Date().getTime() - now;
+        res.api = api;
         StatusBar.items.duration.done(res.duration);
         self.httpPreview.update(res, isNewTab);
       });

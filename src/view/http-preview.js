@@ -58,7 +58,7 @@ class HttpPreview {
       <body>
         <details ${this.response.body === undefined ? 'open' : ''}>
           <summary>
-            <b class="status status-${this.response.statusCode}">${this.response.request.method.toUpperCase()}</b> <span>${this.response.request.href}</span>
+            <b class="status status-${this.response.statusCode}">${this.response.api.method.toUpperCase()}</b> <span>${this.response.api.url}</span>
           </summary>
           <pre><code class="http">${hljs.highlight('http', `HTTP/${this.response.httpVersion} ${this.response.statusCode} ${this.response.statusMessage}
 ${this.formatHeader(this.response.headers)}`, true).value}</code></pre>

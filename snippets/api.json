@@ -7,7 +7,7 @@
       "\turl: 'http://$1'",
       "}"
     ],
-    "description": "Ping data (api-testing-tool)"
+    "description": "Ping data (testing-api)"
   },
   "api-get": {
     "prefix": "api.get",
@@ -17,7 +17,7 @@
       "\turl: 'http://$1'",
       "}"
     ],
-    "description": "GET data (api-testing-tool)"
+    "description": "GET data (testing-api)"
   },
   "api-delete": {
     "prefix": "api.delete",
@@ -27,7 +27,7 @@
       "\turl: 'http://$1'",
       "}"
     ],
-    "description": "Delete data (api-testing-tool)"
+    "description": "Delete data (testing-api)"
   },
   "api-post-json": {
     "prefix": "api.post.json",
@@ -41,7 +41,7 @@
         "\trequestBody: ${2:jsonObject}",
       "}"
     ],
-    "description": "Add JSON data (api-testing-tool)"
+    "description": "Add JSON data (testing-api)"
   },
   "api-post-form": {
     "prefix": "api.post.form",
@@ -57,7 +57,7 @@
         "\t}",
       "}"
     ],
-    "description": "Add form data key-value (api-testing-tool)"
+    "description": "Add form data key-value (testing-api)"
   },
   "api-put-json": {
     "prefix": "api.put.json",
@@ -71,7 +71,7 @@
         "\trequestBody: ${2:jsonObject}",
       "}"
     ],
-    "description": "Update JSON data (api-testing-tool)"
+    "description": "Update JSON data (testing-api)"
   },
   "api-put-form": {
     "prefix": "api.put.form",
@@ -87,7 +87,7 @@
         "\t}",
       "}"
     ],
-    "description": "Update form data key-value (api-testing-tool)"
+    "description": "Update form data key-value (testing-api)"
   },
   "api-post-file": {
     "prefix": "api.post.file",
@@ -103,7 +103,7 @@
         "\t}",
       "}"
     ],
-    "description": "Upload file. File can be string array or string which is absolute path to file.\nYou can add field without file too (api-testing-tool)"
+    "description": "Upload file. File can be string array or string which is absolute path to file.\nYou can add field without file too (testing-api)"
   },
   "api-req-header": {
     "prefix": "api.req-header",
@@ -112,7 +112,7 @@
         "\t$1: $2",
       "}"
     ],
-    "description": "Add request header (api-testing-tool)"
+    "description": "Add request header (testing-api)"
   },
   "api-req-body": {
     "prefix": "api.req-body",
@@ -121,7 +121,7 @@
         "\t'$1': '$2'",
       "}"
     ],
-    "description": "Add request body (api-testing-tool)"
+    "description": "Add request body (testing-api)"
   },
   "api-object": {
     "prefix": "api.object",

@@ -2,7 +2,7 @@
   "name": "testing-api",
   "displayName": "Testing API",
   "description": "Easy to test API. Write testcases for automation test too",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "just4developments",
   "icon": "assets/logo.png",
   "engines": {

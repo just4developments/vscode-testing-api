@@ -9,6 +9,10 @@ Testing API is a extension for visual code which is easy to use and trace histor
 3. Code snippets for operations like GET and POST...
 3. Make testcases when you combine with the project  [https://github.com/just4developments/api-testing]
 
+Note: 
+* You can run api in a part of content by select it and run.
+* If you select nothing, it will run content in editor.
+
 ### Some snippets
 
 1. api.get : Generate client request by GET method
@@ -35,16 +39,16 @@ This extension contributes the following settings:
 
 ## Release Notes
 
-### 1.0.2
+### 0.0.2
 
 * Fix upload file error
 
-### 1.0.1
+### 0.0.1
 
 * Optimize performance
 * Update snippets
 
-### 1.0.0
+### 0.0.0
 
 Initial release of Testing API
 

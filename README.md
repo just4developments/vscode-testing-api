@@ -24,8 +24,17 @@ Note:
 ### Quick command
 
 * `Alt + Enter` : Run api in a window
-* `Ctr + Alt + Enter`: Run api and open new window
+* `Ctr + Alt + Enter`: Run api then open new window
 * `Ctrl + Shift + P` then type `API History`: Show Api history
+
+## Example
+```
+{
+  des: 'option which show in history',
+  method: 'GET',
+  url: 'http://localhost.com'
+}
+```
 
 ## Install
 
@@ -35,9 +44,13 @@ Press F1, type `ext install testing-api`
 
 This extension contributes the following settings:
 
-* `history.maxStored`: Max num of history can be stored.(Default is 50)
+* `history.maxStored`: Max num of history can be stored.(Default is 100)
 
 ## Release Notes
+
+### 0.0.3
+
+* Update document, snippets
 
 ### 0.0.2
 

@@ -19,12 +19,15 @@
   ],
   "activationEvents": [
     "onCommand:api.run",
+    "onCommand:api.runNewTab",
     "onCommand:api.history"
   ],
   "keywords": [
     "REST",
     "Http",
-    "api"
+    "api",
+    "test",
+    "auto test"
   ],
   "main": "./extension",
   "contributes": {
@@ -49,15 +52,18 @@
     "commands": [
       {
         "command": "api.run",
-        "title": "API Run"
+        "title": "Run",
+        "category": "API"
       },
       {
         "command": "api.runNewTab",
-        "title": "API Run new tab"
+        "title": "Run (new tab)",
+        "category": "API"
       },
       {
         "command": "api.history",
-        "title": "API History"
+        "title": "History",
+        "category": "API"
       }
     ],
     "keybindings": [
@@ -76,7 +82,7 @@
       "properties": {
         "history.maxStored": {
           "type": "integer",
-          "default": 50,
+          "default": 100,
           "description": "Max num of history can be stored"
         }
       }

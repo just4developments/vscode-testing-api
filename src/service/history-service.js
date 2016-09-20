@@ -19,7 +19,7 @@ HistoryService.getCreatedTime = (date)=>{
   return date.toLocaleDateString();
 }
 HistoryService.load = () => {
-  HistoryService.MAX_HISTORY = vscode.workspace.getConfiguration('history').get('maxStored', 50);
+  HistoryService.MAX_HISTORY = vscode.workspace.getConfiguration('history').get('maxStored', 100);
   var cnt = StorageService.getData('history');
   if(cnt) HistoryService.list = JSON.parse(cnt);  
 }
